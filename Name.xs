@@ -1,5 +1,5 @@
 /* Copyright (C) 2004, 2008  Matthijs van Duin.  All rights reserved.
- * This program is free software; you can redistribute it and/or modify 
+ * This program is free software; you can redistribute it and/or modify
  * it under the same terms as Perl itself.
  */
 
@@ -31,6 +31,7 @@ subname(name, sub)
 	GV *gv;
 	HV *stash = CopSTASH(PL_curcop);
 	char *s, *end = NULL, saved;
+	MAGIC *mg;
     PPCODE:
 	if (!SvROK(sub) && SvGMAGICAL(sub))
 		mg_get(sub);
@@ -41,7 +42,8 @@ subname(name, sub)
 	else if (!SvOK(sub))
 		croak(PL_no_usym, "a subroutine");
 	else if (PL_op->op_private & HINT_STRICT_REFS)
-		croak(PL_no_symref, SvPV_nolen(sub), "a subroutine");
+		croak("Can't use string (\"%.32s\") as %s ref while \"strict refs\" in use",
+		      SvPV_nolen(sub), "a subroutine");
 	else if ((gv = gv_fetchpv(SvPV_nolen(sub), FALSE, SVt_PVCV)))
 		cv = GvCVu(gv);
 	if (!cv)
@@ -64,28 +66,26 @@ subname(name, sub)
 	}
 	gv = (GV *) newSV(0);
 	gv_init(gv, stash, name, s - name, TRUE);
-#ifndef USE_5005THREADS
-	if (CvPADLIST(cv)) {
-		/* cheap way to refcount the gv */
-		av_store((AV *) AvARRAY(CvPADLIST(cv))[0], 0, (SV *) gv);
-	} else
-#endif
-	{
-		/* expensive way to refcount the gv */
-		MAGIC *mg = SvMAGIC(cv);
-		while (mg && mg->mg_virtual != &subname_vtbl)
-			mg = mg->mg_moremagic;
-		if (!mg) {
-			Newz(702, mg, 1, MAGIC);
-			mg->mg_moremagic = SvMAGIC(cv);
-			mg->mg_type = PERL_MAGIC_ext;
-			mg->mg_virtual = &subname_vtbl;
-			SvMAGIC_set(cv, mg);
-		}
-		if (mg->mg_flags & MGf_REFCOUNTED)
-			SvREFCNT_dec(mg->mg_obj);
-		mg->mg_flags |= MGf_REFCOUNTED;
-		mg->mg_obj = (SV *) gv;
+
+	mg = SvMAGIC(cv);
+	while (mg && mg->mg_virtual != &subname_vtbl)
+		mg = mg->mg_moremagic;
+	if (!mg) {
+		Newz(702, mg, 1, MAGIC);
+		mg->mg_moremagic = SvMAGIC(cv);
+		mg->mg_type = PERL_MAGIC_ext;
+		mg->mg_virtual = &subname_vtbl;
+		SvMAGIC_set(cv, mg);
 	}
+	if (mg->mg_flags & MGf_REFCOUNTED)
+		SvREFCNT_dec(mg->mg_obj);
+	mg->mg_flags |= MGf_REFCOUNTED;
+	mg->mg_obj = (SV *) gv;
+	SvRMAGICAL_on(cv);
+	CvANON_off(cv);
+#ifndef CvGV_set
 	CvGV(cv) = gv;
+#else
+	CvGV_set(cv, gv);
+#endif
 	PUSHs(sub);

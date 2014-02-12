@@ -1,23 +1,29 @@
-This is the debian package for the Sub-Name module.
-It was created by Krzysztof Krzyzaniak (eloy) <eloy@debian.org>.
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Maintainer: Florian Ragwitz <rafl@debian.org>
+Source: http://search.cpan.org/dist/Sub-Name/
+Name: Sub-Name
 
-It was downloaded from: http://search.cpan.org/~xmath/Sub-Name-0.02/
+Copyright: 2004-2008, Matthijs van Duin <xmath@cpan.org>
+License: Artistic or GPL-1+
 
-The upstream author is: Matthijs van Duin <xmath@cpan.org>
+Files: debian/*
+Copyright:
+ 2005-2008, Krzysztof Krzyzaniak (eloy) <eloy@debian.org>
+ 2008-2010, Ansgar Burchardt <ansgar@43-1.org>
+License: Artistic or GPL-1+
 
-Copyright (C) 2004, 2008  Matthijs van Duin.  All rights reserved.
+License: Artistic
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the Artistic License, which comes with Perl.
+ .
+ On Debian systems, the complete text of the Artistic License can be
+ found in `/usr/share/common-licenses/Artistic'.
 
-This program is free software, you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
-Perl is distributed under licenses:
-
-    a) the GNU General Public License as published by the Free Software
-       Foundation; either version 1, or (at your option) any later
-       version, or
-  
-    b) the "Artistic License" which comes with Perl.
-  
-    On Debian GNU/Linux systems, the complete text of the GNU General
-    Public License can be found in /usr/share/common-licenses/GPL' and
-    the Artistic Licence in /usr/share/common-licenses/Artistic'.
+License: GPL-1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 1 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-1'.

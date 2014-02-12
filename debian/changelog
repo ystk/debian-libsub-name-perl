@@ -1,3 +1,24 @@
+libsub-name-perl (0.05-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * Standards-Version 3.8.3 (drop perl version dependency)
+
+  [ gregor herrmann ]
+  * debian/control: Changed: Switched Vcs-Browser field to ViewSVN
+    (source stanza).
+
+  [ Ansgar Burchardt ]
+  * New upstream release.
+  * Use tiny debian/rules.
+  * Use source format 3.0 (quilt).
+  * Convert debian/copyright to proposed machine-readable format.
+  * Bump Standards-Version to 3.9.1.
+
+  [ gregor herrmann ]
+  * debian/control: make short description a noun phrase.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Sat, 02 Oct 2010 18:02:59 +0200
+
 libsub-name-perl (0.04-1) unstable; urgency=low
 
   [ Ansgar Burchardt ]

@@ -1,8 +1,10 @@
 Changes
-MANIFEST
-META.yml
+lib/Sub/Name.pm
 Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
 Name.xs
 README
-lib/Sub/Name.pm
+t/RT42725_deparse.t
 t/smoke.t
+META.yml                                 Module meta-data (added by MakeMaker)
