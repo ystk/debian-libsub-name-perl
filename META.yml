@@ -1,21 +1,25 @@
---- #YAML:1.0
-name:               Sub-Name
-version:            0.05
-abstract:           (re)name a sub
+---
+abstract: '(re)name a sub'
 author:
-    - Matthijs van Duin <xmath@cpan.org>
-license:            unknown
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+  - 'Matthijs van Duin <xmath@cpan.org>'
 build_requires:
-    ExtUtils::MakeMaker:  0
-requires:  {}
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.56
+  ExtUtils::MakeMaker: '0'
+configure_requires:
+  ExtUtils::MakeMaker: '0'
+dynamic_config: 0
+generated_by: 'ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.141520'
+license: unknown
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Sub-Name
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  perl: '5.006'
+resources:
+  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Sub-Name
+  repository: https://github.com/karenetheridge/Sub-Name.git
+version: '0.07'

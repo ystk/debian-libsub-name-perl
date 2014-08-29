@@ -1,18 +1,21 @@
 Source: libsub-name-perl
-Section: perl
-Priority: optional
-Build-Depends: perl, debhelper (>= 7)
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Krzysztof Krzyżaniak (eloy) <eloy@debian.org>,
- Ansgar Burchardt <ansgar@43-1.org>
-Standards-Version: 3.9.1
-Homepage: http://search.cpan.org/dist/Sub-Name/
-Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libsub-name-perl/
-Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libsub-name-perl/
+           Ansgar Burchardt <ansgar@debian.org>
+Section: perl
+Priority: optional
+Build-Depends: perl,
+               debhelper (>= 9.20120312~)
+Standards-Version: 3.9.5
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libsub-name-perl.git
+Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libsub-name-perl.git
+Homepage: https://metacpan.org/release/Sub-Name
 
 Package: libsub-name-perl
 Architecture: any
-Depends: ${perl:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Depends: ${perl:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends}
 Description: module for assigning a new name to referenced sub
  Sub::Name has only one function, which is also exported by default:
  .

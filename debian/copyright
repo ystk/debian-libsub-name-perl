@@ -1,15 +1,17 @@
-Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
-Maintainer: Florian Ragwitz <rafl@debian.org>
-Source: http://search.cpan.org/dist/Sub-Name/
-Name: Sub-Name
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Sub-Name
+Upstream-Contact: Florian Ragwitz <rafl@debian.org>
+Source: https://metacpan.org/release/Sub-Name
 
+Files: *
 Copyright: 2004-2008, Matthijs van Duin <xmath@cpan.org>
+ 2014, cPanel Inc.
 License: Artistic or GPL-1+
 
 Files: debian/*
 Copyright:
  2005-2008, Krzysztof Krzyzaniak (eloy) <eloy@debian.org>
- 2008-2010, Ansgar Burchardt <ansgar@43-1.org>
+ 2008-2010, Ansgar Burchardt <ansgar@debian.org>
 License: Artistic or GPL-1+
 
 License: Artistic
