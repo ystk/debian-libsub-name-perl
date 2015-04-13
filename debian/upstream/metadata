@@ -1,0 +1,8 @@
+---
+Archive: CPAN
+Bug-Database: https://rt.cpan.org/Public/Dist/Display.html?Name=Sub-Name
+Bug-Submit: bug-Sub-Name@rt.cpan.org
+Contact: Matthijs van Duin <xmath@cpan.org>
+Name: Sub-Name
+Repository: https://github.com/karenetheridge/Sub-Name.git
+Repository-Browse: https://github.com/karenetheridge/Sub-Name

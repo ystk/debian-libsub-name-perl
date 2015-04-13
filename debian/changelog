@@ -1,3 +1,22 @@
+libsub-name-perl (0.12-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * Imported Upstream version 0.09
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * Add build dependency on libdevel-checkbin-perl.
+  * Add debian/upstream/metadata
+  * Imported upstream version 0.12
+  * debian/copyright: update Upstream-Contact.
+  * Declare compliance with Debian Policy 3.9.6.
+  * Add lintian override for hardening-no-fortify-functions false
+    positive.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 11 Oct 2014 16:02:10 +0200
+
 libsub-name-perl (0.07-1) unstable; urgency=medium
 
   * Team upload.
